@@ -1,0 +1,49 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: ClusterServiceVersion
+metadata:
+  annotations:
+    alm-examples: '[]'
+    capabilities: Basic Install
+    operators.operatorframework.io/builder: operator-sdk-v1.0.0
+    operators.operatorframework.io/project_layout: go.kubebuilder.io/v2
+  name: visitor-operator.vX.Y.Z
+  namespace: placeholder
+spec:
+  apiservicedefinitions: {}
+  customresourcedefinitions:
+    owned:
+    - description: VisitorsApp is the Schema for the visitorsapps API
+      displayName: Visitors App
+      kind: VisitorsApp
+      name: visitorsapps.visitors.sourcedelica.com
+      version: v1alpha1
+  description: Visitors App
+  displayName: visitors-app
+  icon:
+  - base64data: ""
+    mediatype: ""
+  install:
+    spec:
+      deployments: null
+    strategy: ""
+  installModes:
+  - supported: true
+    type: OwnNamespace
+  - supported: true
+    type: SingleNamespace
+  - supported: false
+    type: MultiNamespace
+  - supported: true
+    type: AllNamespaces
+  keywords:
+  - visitors
+  links:
+  - name: Visitor Operator
+    url: https://visitor-operator.domain
+  maintainers:
+  - email: ericacm@gmail.com
+    name: Eric
+  maturity: alpha
+  provider:
+    name: sourcedelica
+  version: 0.0.0
